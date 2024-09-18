@@ -1,0 +1,34 @@
+1]What is Git?
+Git is a distributed version control system that tracks changes in code and allows multiple developers to collaborate on a project.
+
+2]What do you understand by the term ‘Version Control System’?
+A Version Control System (VCS) is a tool that helps manage changes to source code over time, keeping track of modifications and allowing collaboration.
+
+3]What is GitHub? 
+GitHub is a web-based platform that hosts Git repositories and provides tools for collaboration, version control, and project management.
+
+4]Mention some popular Git hosting services:
+GitHub
+GitLab
+Bitbucket
+SourceForge
+AWS CodeCommit
+
+5]Different types of version control systems:
+Local Version Control (LVCS)
+Centralized Version Control (CVCS)
+Distributed Version Control (DVCS)
+
+6]What benefits come with using Git?
+Collaboration
+Branching and merging
+Distributed development
+Track history of changes
+Backup and restoration
+
+7]What is a Git repository?
+A Git repository is a storage location where Git tracks the history of your project, including all files and their changes.
+
+8]How can you initialize a repository in Git?
+You can initialize a Git repository using the command: git init
+
