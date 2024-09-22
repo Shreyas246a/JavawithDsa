@@ -18,7 +18,9 @@ public class Biggestnum {
 //		System.out.println(max);
 //		}
 		
-		System.out.println(Math.max(c, Math.max(a, b)));
+//		System.out.println(Math.max(c, Math.max(a, b)));
+		int max = (a>b)?(a>c? a : c):(b>c? b:c);
+		System.out.println(max);
 		in.close();
 	}
 

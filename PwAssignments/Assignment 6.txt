@@ -1,0 +1,6 @@
+1. Programing language is set of instructio given to computer to perform specific task
+2.  since the computer understands only MLL ie binary form and it is difficult to write code in MLL so we need a language which can interact between human readable to MLL
+3.Java is simple,platform independent,object orented ,robust(find error and helps us to debug).
+4. Object is real world enity ,derived from class.
+5.Class is blueprint of program which has properties and behaviours of a program
+6. main() : method it is the begining/starting point of a Java program . Execution begins from this point only  it is given as      " public static void main(String [] args) {   ...... } "

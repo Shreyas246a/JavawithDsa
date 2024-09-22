@@ -1,0 +1,9 @@
+1. To create object we must have class,reference variable and must use new keyword to allocate memory .
+               ex   class_name objName=new class_name();
+2. new keyword allocates memory to the object.
+3. There are 3 types of variables   1. Instance variable      2. Local variable    3.Static variable
+4.Instance variable : variables which are created along with objects outside main method .must use objects to                                                invoke them . Stored inside Heap area 
+   Local variable: variables created inside main method can be invoked without object. Stored inside Stack memory
+5. Instance variable Stored inside Heap area
+     Local variable:Stored inside Stack memory
+6.Method overloading : when we have 2 or more  methods of same name with diiferent arguments we say to be                as  method overloading.

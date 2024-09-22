@@ -1,0 +1,28 @@
+1. Conditional operators are used when we have multiple boolean expression and execution is done on comparing the both boolean.
+2.
+3. Switch case allows user to choose a option to execute when there are many cases.It is type of Menu driven program where one of the case     	is selected and executed.
+4. Multiplicatio Division Modulo > Addition Subtraction { if same presedence then evaluated from left to right }
+5. Conditional statements are used to execute specific task when a condition is true if not the other block will be executed 
+6.  syntax     if (condition1 ){ 
+                           //statement 1
+
+                                      }
+                        else{   
+                                   // Statement 2
+                                      }
+
+7.   3 types of iterative statement are 1. For loop 2.Do while loop 3. while loop
+8.   for loop :  1) intialization ,conditon check and iteration is done in one line at begining only
+                          2)it is entry level condition check the loop may run or not
+      do while :  1) intialization done outside the loop before loop mentioning, iteration done inside the loop,condition is checked at the end .
+                        2)it is exit level condition check hence loop runs for atleast 1 time for sure.
+9.   class print{
+       public static void main(String [] args){
+        for(int i=1; i<11;i++){
+                      System.out.prntln(i); 
+                       }
+               }
+           }
+
+
+                
