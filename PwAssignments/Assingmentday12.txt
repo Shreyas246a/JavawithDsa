@@ -1,0 +1,49 @@
+1. What do you mean by an Array?
+An array is a data structure in Java that stores a fixed-size sequential collection of elements of the same data type. It is a way to store multiple values in a single variable rather than declaring separate variables for each value.
+
+2. How to create an Array?
+int[] arr = new int[5]; // creates an array of size 5
+arr[0] = 10;            // assigning values
+arr[1] = 20;
+
+3. Can we change the size of an array at runtime?
+No, once an array is created in Java, its size is fixed. You cannot resize an array at runtime
+
+4. Can you declare an array without assigning the size of the array?
+You can declare an array without specifying its size, but you must specify the size when you instantiate it.
+
+5. What is the default value of an Array?
+In Java, when an array is initialized but not assigned any values, each element in the array has a default value based on the data type:
+
+int, short, byte, long: 0
+float, double: 0.0
+char: '\u0000' (null character)
+boolean: false
+Object: null
+
+6. What is a 1D array with an example?
+A 1D array (one-dimensional array) is a list of elements arranged in a single row. It's a simple array where elements are accessed by a single index.
+
+  int[] arr = {10, 20, 30, 40, 50}; // 1D array
+
+7. Write a program on a 2D array?
+A 2D array (two-dimensional array) is an array of arrays, where each element can be accessed by two indices: one for the row and one for the column.
+
+public class TwoDArrayExample {
+    public static void main(String[] args) {
+        // Declare and initialize a 2D array
+        int[][] arr = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        
+        // Accessing and printing 2D array elements
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println(); // new line after each row
+        }
+    }
+}
