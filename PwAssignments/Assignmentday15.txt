@@ -1,0 +1,90 @@
+1.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a Scanner object for input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for input
+        System.out.print("Enter a string: ");
+        String userInput = scanner.nextLine();
+
+        // Output the entered string
+        System.out.println("You entered: " + userInput);
+
+        // Close the scanner to prevent resource leak
+        scanner.close();
+    }
+}
+
+2.
+You can concatenate two strings in Java using the + operator or the concat() method.
+String result = str1 + str2; // Concatenation using + operator
+System.out.println(result);  // Output: Hello, World!
+
+String result = str1.concat(str2); // Concatenation using concat() method
+System.out.println(result);        // Output: Hello, World!
+
+3.
+You can find the length of a string in Java using the length() method, which returns the number of characters in the string (including spaces).
+
+ String text = "Java Programming";
+        int length = text.length(); // Find the length of the string
+        System.out.println("Length of the string: " + length); // Output: 16
+
+4.
+In Java, you can compare two strings using the equals() method or compareTo() method.
+
+   String str1 = "apple";
+        String str2 = "apple";
+        
+        if (str1.equals(str2)) {
+            System.out.println("The strings are equal.");
+        } else {
+            System.out.println("The strings are not equal.");
+        }
+
+        String str1 = "apple";
+        String str2 = "banana";
+        
+        int result = str1.compareTo(str2);
+        
+        if (result == 0) {
+            System.out.println("The strings are equal.");
+        } else if (result < 0) {
+            System.out.println("str1 comes before str2.");
+        } else {
+            System.out.println("str1 comes after str2.");
+        }
+
+5.
+public class Main {
+    public static void main(String[] args) {
+        String word = "refrigerator";
+        int length = word.length(); // Find the length of the string
+        System.out.println("Length of the string \"refrigerator\" is: " + length); // Output: 12
+    }
+}
+
+6.
+public class Main {
+    public static void main(String[] args) {
+        String word = "Umbrella";
+        
+        if (word.contains("e")) {
+            System.out.println("The letter 'e' is present in the word.");
+        } else {
+            System.out.println("The letter 'e' is not present in the word.");
+        }
+    }
+}
+
+7.
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello, have a good day";
+        String result = str.replaceAll("[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]", "");
+        System.out.println("String after deleting consonants: " + result);
+    }
+}
