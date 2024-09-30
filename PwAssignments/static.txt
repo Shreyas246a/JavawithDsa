@@ -1,0 +1,112 @@
+Q1: Why do we need the static keyword in Java? Explain with an example.
+Solution:
+The static keyword in Java is used to declare class-level methods and variables that belong to the class itself, rather than to instances (objects) of the class. A static method or variable can be accessed without creating an instance of the class.
+
+Static Variable: All instances of the class share the same static variable. Changes made to the static variable reflect across all instances.
+Static Method: A static method can be called without creating an object of the class. It typically works with static variables.
+Example:
+
+class Example {
+    static int count = 0; 
+    Example() {
+        count++; 
+    }
+
+    static void displayCount() { 
+        System.out.println("Number of objects created: " + count);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new Example(); 
+        new Example(); 
+        new Example(); 
+        
+        Example.displayCount();     }
+}
+Output:
+Number of objects created: 3
+
+2. Q2: What is class loading and how does a Java program actually execute?
+Solution:
+Class Loading in Java refers to the process of loading .class files into memory to be executed by the Java Virtual Machine (JVM). When a Java program runs, the following steps occur:
+
+Compilation: The Java source code (.java file) is compiled into bytecode (.class file).
+Class Loading: The bytecode is loaded into memory by the ClassLoader.
+Bytecode Verification: The JVM verifies the bytecode for correctness and security.
+Execution: The JVM’s interpreter or Just-In-Time (JIT) compiler executes the bytecode instructions.
+Q3: Can we mark a local variable as static?
+Solution:
+No, we cannot declare a local variable as static in Java. The static keyword is used for variables at the class level, and local variables are specific to methods and exist only during method execution.
+
+Q4: Why is the static block executed before the main method in Java?
+Solution:
+Static blocks in Java are executed before the main method because they are run when the class is first loaded into memory by the ClassLoader. This happens before any methods, including main, are executed. Static blocks are typically used to initialize static variables or perform setup tasks before the execution of the program begins.
+
+Example:
+class Example {
+    static {
+        System.out.println("Static block executed");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main method executed");
+    }
+}
+Output:
+Static block executed  
+Main method executed
+Q5: Why is a static method also called a class method?
+Solution:
+A static method is called a class method because it belongs to the class itself, not to any specific instance of the class. This means you can call a static method using the class name, without creating an object of the class.
+
+Q6: What is the use of static blocks in Java?
+Solution:
+A static block is used to initialize static variables or to perform operations that need to happen once when the class is loaded into memory. This is useful for one-time setup tasks such as database connections, loading configuration files, etc.
+
+Q7: Difference between Static and Instance Variables
+Solution:
+
+Static Variable:
+Declared using the static keyword.
+Belongs to the class, not the instances.
+Shared among all instances of the class.
+Exists for the entire lifetime of the program.
+Instance Variable:
+Declared without the static keyword.
+Belongs to each instance of the class (object).
+Each object has its own copy.
+Exists as long as the object exists.
+Example:
+class Example {
+    static int staticVar = 10; // Static variable
+    int instanceVar = 20;      // Instance variable
+}
+Q8: Difference between Static and Non-Static Members
+Solution:
+
+Static Members:
+
+Can be accessed using the class name.
+No need to create an object to access static members.
+Belong to the class itself, not the object.
+Can only access other static members directly.
+Non-Static Members:
+
+Can only be accessed via an object of the class.
+Belong to individual objects, not the class.
+Can access both static and non-static members.
+Example:
+class Example {
+    static int staticVar = 10; // Static member
+    int nonStaticVar = 20;     // Non-static member
+
+    static void staticMethod() {
+        System.out.println("Static method");
+    }
+
+    void nonStaticMethod() {
+        System.out.println("Non-static method");
+    }
+}
