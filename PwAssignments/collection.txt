@@ -1,0 +1,103 @@
+1. What is the Collection framework in Java?
+Ans: Collection Framework is a combination of classes and interface, which is used to store and manipulate the
+data in the form of objects. It provides various classes such as ArrayList, Vector, Stack, and HashSet, etc. and
+interfaces such as List, Queue, Set, etc. for this purpose.
+
+2. What is the difference between ArrayList and LinkedList?
+Ans:
+1. Internal Data Structure
+ArrayList: Uses a dynamic array internally to store elements. When the array becomes full, a new array (typically 1.5 times the current size) is created, and the elements are copied over.
+How it stores data: Contiguous memory locations.
+LinkedList: Implements a doubly-linked list where each element (node) has references to both the next and the previous element in the list.
+2. Access Time (Retrieving Elements)
+ArrayList: Provides fast random access (O(1)) because it uses an index-based structure. You can quickly retrieve any element by its index
+How it stores data: Non-contiguous memory locations.
+LinkedList: Provides sequential access (O(n)) because it must traverse the list to find the element. If you want to access the 5th element, the list needs to start from the head (or tail) and traverse the nodes.
+
+3. Insertion and Deletion (Modifying Elements)
+ArrayList: Inserting or deleting elements is slow (O(n)) when done anywhere except at the end of the list. This is because elements need to be shifted to maintain the contiguous array structure.
+Inserting or removing at the end of an ArrayList: O(1) (amortized).
+Inserting or removing at the middle or beginning: O(n).
+LinkedList: Inserting or deleting elements is faster (O(1)) at both the beginning and the end, as it only requires updating the references of neighboring nodes.
+Inserting or deleting in the middle requires traversing the list first (O(n)), but once the position is found, the operation is O(1).
+4. Memory Usage
+ArrayList: More memory-efficient than LinkedList because it only stores the actual objects and uses a contiguous block of memory. However, when the array is resized, a new array is created, and the old one is discarded, which can temporarily increase memory usage.
+LinkedList: Requires more memory due to the overhead of storing two references (to the next and previous nodes) for each element. This can lead to increased memory consumption for large lists.
+5. Performance in Large Lists
+ArrayList: Performs well for large lists when you primarily need random access and do not perform many insertions or deletions in the middle of the list.
+LinkedList: Performs better for frequent insertions and deletions (especially at the beginning and end) but is not suitable for large lists where random access is common.
+6. Iterating through the List
+ArrayList: Iteration is faster due to better cache locality because of the contiguous memory storage.
+LinkedList: Iteration is slower because of the non-contiguous storage, which may result in cache misses.
+7. Usage of ListIterator
+Both ArrayList and LinkedList support the ListIterator interface, allowing traversal in both forward and backward directions, as well as element insertion, modification, and deletion while iterating.
+
+3. What is the difference between Iterator and ListIterator?
+Ans:
+The key differences between Iterator and ListIterator in Java lie in their functionality, usage, and direction of traversal. Here’s a detailed comparison:
+
+1. Usage and Scope
+Iterator: Can be used to iterate over any type of collection (e.g., List, Set, Map).
+ListIterator: Specifically designed for lists (i.e., it can only be used with classes that implement the List interface, such as ArrayList, LinkedList, etc.).
+
+4. What is the difference between Iterator and Enumeration?
+Ans:
+1. Introduction and Usage
+Iterator: Introduced in Java 1.2 as part of the Java Collections Framework. It is more modern and offers enhanced functionality compared to Enumeration. It is used with the Collection classes such as ArrayList, HashSet, LinkedList, etc.
+Enumeration: Introduced in Java 1.0, mainly used with legacy classes like Vector and Stack. It is part of the java.util package but considered more limited and somewhat outdated compared to Iterator.
+2. Traversal Direction
+Iterator: Supports only forward traversal of elements in a collection.
+Enumeration: Also supports only forward traversal of elements.
+
+5. What is the difference between List and Set?
+Ans: The List and Set both extend the collection interface. However, there are some differences between the two
+which are listed below@
+o The List can contain duplicate elements whereas Set includes unique items@
+o The List is an ordered collection which maintains the insertion order whereas Set is an unordered collection
+which does not preserve the insertion order@
+o The List interface contains a single legacy class which is Vector class whereas the Set interface does not
+have any legacy class@
+o The List interface can allow a number of null values whereas Set interface only allows a single null value.
+
+6. What is the difference between HashSet and TreeSet?
+Ans: Both HashSet and TreeSet are implementations of the Set interface in Java, but they have some
+differences in terms of their properties and usage1
+o Ordering: HashSet is an unordered collection of elements, while TreeSet is a sorted set of elements based on
+their natural order or a custom comparator@
+o Duplication: HashSet does not allow duplicate elements, while TreeSet does not allow duplicates as well@
+
+o Implementation: HashSet is implemented using a hash table, while TreeSet is implemented using a self-
+balancing binary search tree (Red-Black tree)@
+
+o Performance: HashSet has constant-time complexity O(1) for adding, removing, and testing the existence of
+an element, while TreeSet has a logarithmic-time complexity O(log n) for these operations due to the self-
+balancing property@
+
+o Memory usage: HashSet uses less memory than TreeSet because it only stores the elements, while TreeSet
+stores additional information for maintaining the order@
+o Iteration: HashSet provides no guarantees regarding the order of iteration, while TreeSet guarantees the
+elements are iterated in sorted order@
+o Usage: HashSet is suitable when ordering is not important, and fast access and membership tests are
+needed. TreeSet is suitable when elements need to be sorted or accessed in a specific order.
+
+7. What is the difference between Array and ArrayList?
+Ans: Both arrays and ArrayLists are used to store collections of elements in Java, but they have some
+differences in terms of their properties and usage1
+o Type: Arrays can store elements of primitive data types as well as objects, while ArrayList can only store
+objects@
+o Size: The size of an array is fixed once it is created, while the size of an ArrayList can be dynamically
+increased or decreased by adding or removing elements@
+o Mutability: Arrays are mutable, meaning that you can modify the elements in an array after it has been
+created. ArrayList is also mutable, but the only way to modify it is by adding, removing or modifying
+elements@
+o Performance: Arrays have better performance than ArrayLists for certain operations, such as accessing
+elements by index, because they are implemented as a continuous block of memory. ArrayLists, on the other
+hand, use dynamic memory allocation and are implemented as a dynamic array, which may result in more
+memory overhead and slower performance for certain operations@
+o Methods: Arrays have a limited set of methods compared to ArrayLists, which provides more methods for
+manipulating the collection, such as adding, removing, and sorting elements.
+E Initialization: Arrays can be initialized with values at the time of creation, while ArrayList requires the use of
+methods to add elements to the collectionN
+E Compatibility: Arrays are compatible with traditional for-loops and can be easily passed to other methods,
+while ArrayList requires the use of a special for-each loop and may require more code to be passed to other
+methods.

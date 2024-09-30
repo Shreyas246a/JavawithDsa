@@ -1,0 +1,107 @@
+1. Inheritance in Java
+Inheritance is a mechanism where one class acquires the properties and behaviors (fields and methods) of another class. The class that inherits is called the subclass, and the class being inherited from is called the superclass. Inheritance allows code reusability and establishes a parent-child relationship between classes.
+
+2. Superclass and Subclass
+Superclass: The class whose properties and methods are inherited by another class. Example: Animal is a superclass.
+Subclass: The class that inherits from the superclass. Example: Dog is a subclass of Animal.
+
+3. How is Inheritance implemented in Java?
+Inheritance in Java is implemented using the extends keyword. A subclass uses extends to inherit from a superclass.
+class Car {
+    void drive() {
+        System.out.println("Driving a car.");
+    }
+}
+
+class ElectricCar extends Car {
+    void charge() {
+        System.out.println("Charging the electric car.");
+    }
+}
+
+4. Polymorphism in Java
+Polymorphism means "many forms" and allows one interface to be used for a general class of actions. The most common types of polymorphism in Java are method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).
+
+5. Method Overloading vs Method Overriding
+Method Overloading: Multiple methods in the same class with the same name but different parameters (i.e., different signatures). It's an example of compile-time polymorphism. Example:
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+Method Overriding: When a subclass has a method with the same name, return type, and parameters as a method in its superclass. It's an example of runtime polymorphism. Example:
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks.");
+    }
+}
+6. Abstraction with an Example
+Abstraction is the concept of hiding the implementation details and showing only the functionality to the user. It is achieved using abstract classes and interfaces.
+abstract class Vehicle {
+    abstract void start(); // abstract method with no body
+}
+
+class Car extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Car starts.");
+    }
+}
+
+7. Abstract Method vs Final Method
+Abstract Method: A method that is declared without implementation. It must be implemented by subclasses. Example:
+abstract class Shape {
+    abstract void draw();
+}
+Final Method: A method that cannot be overridden by subclasses. Example:
+class FinalExample {
+    final void display() {
+        System.out.println("This is a final method.");
+    }
+}
+8. Final Class in Java
+A final class cannot be subclassed. It is used to prevent inheritance. Example:final class FinalClass {
+    // This class cannot be extended
+}
+
+// The following will cause an error:
+// class SubClass extends FinalClass {}  // Error!
+
+9. Abstraction vs Encapsulation
+Abstraction: Focuses on hiding the complexity of the system by exposing only the essential parts. It's about providing a clear interface.
+Encapsulation: Encapsulates the data (variables) and code (methods) into a single unit, and access is controlled through access modifiers (private, public, etc.).
+
+10. Runtime vs Compile-time Polymorphism
+Compile-time polymorphism: Achieved through method overloading. The method call is resolved at compile time.
+Runtime polymorphism: Achieved through method overriding. The method call is resolved at runtime based on the object type.
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Cat(); // Runtime polymorphism
+        a.sound(); // Calls the overridden method in Cat class
+    }
+}
+
