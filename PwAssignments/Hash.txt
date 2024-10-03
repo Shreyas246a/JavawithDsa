@@ -1,0 +1,146 @@
+ Q1. Implement a Map in Java which prints the list sorted by key
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class SortedMapByKey {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new TreeMap<>();
+        map.put(5, "Rahul");
+        map.put(7, "Lakshman");
+        map.put(1, "Ram");
+        map.put(4, "Krrish");
+        map.put(2, "Lakshay");
+
+        System.out.println(map);  // The keys will automatically be sorted because of TreeMap
+    }
+}
+Output:
+
+{1=Ram, 2=Lakshay, 4=Krrish, 5=Rahul, 7=Lakshman}
+
+
+ Q2. Implement a Map in Java which prints the list sorted by value
+
+import java.util.*;
+
+public class SortedMapByValue {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(5, "Rahul");
+        map.put(7, "Lakshman");
+        map.put(1, "Ram");
+        map.put(4, "Krrish");
+        map.put(2, "Lakshay");
+
+        
+        List<Map.Entry<Integer, String>> list = new ArrayList<>(map.entrySet());
+        list.sort(Map.Entry.comparingByValue());
+
+
+        Map<String, Integer> sortedByValueMap = new LinkedHashMap<>();
+        for (Map.Entry<Integer, String> entry : list) {
+            sortedByValueMap.put(entry.getValue(), entry.getKey());
+        }
+        System.out.println(sortedByValueMap);
+    }
+}
+Output:**
+```
+{Krrish=4, Lakshay=2, Lakshman=7, Rahul=5, Ram=1}
+
+ Q3. Detect if an Array contains a duplicate element
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class DetectDuplicate {
+    public static void main(String[] args) {
+        int[] nums1 = {1, 2, 3, 4};
+        System.out.println(containsDuplicate(nums1));  // Output: No
+
+        int[] nums2 = {1, 2, 3, 4, 1};
+        System.out.println(containsDuplicate(nums2));  // Output: Yes
+    }
+
+    public static String containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (!set.add(num)) {
+                return "Yes";
+            }
+        }
+        return "No";
+    }
+}
+Output:
+```
+No
+Yes
+
+
+ Q4. Return the majority element in an array
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MajorityElement {
+    public static void main(String[] args) {
+        int[] nums = {4, 2, 7, 1, 9};
+        System.out.println(majorityElement(nums));
+    }
+
+    public static int majorityElement(int[] nums) {
+        Map<Integer, Integer> countMap = new HashMap<>();
+        int majorityElement = nums[0];
+        int maxCount = 0;
+
+        for (int num : nums) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+            if (countMap.get(num) > maxCount) {
+                maxCount = countMap.get(num);
+                majorityElement = num;
+            }
+        }
+
+        return majorityElement;
+    }
+}
+Output:9
+
+ Q5. Check if ransomNote can be constructed from magazine
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class RansomNote {
+    public static void main(String[] args) {
+        String ransomNote1 = "a";
+        String magazine1 = "b";
+        System.out.println(canConstruct(ransomNote1, magazine1));  // Output: false
+
+        String ransomNote2 = "aa";
+        String magazine2 = "ab";
+        System.out.println(canConstruct(ransomNote2, magazine2));  // Output: false
+    }
+
+    public static boolean canConstruct(String ransomNote, String magazine) {
+        Map<Character, Integer> charCountMap = new HashMap<>();
+
+        for (char c : magazine.toCharArray()) {
+            charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+        }
+
+        for (char c : ransomNote.toCharArray()) {
+            if (!charCountMap.containsKey(c) || charCountMap.get(c) == 0) {
+                return false;
+            }
+            charCountMap.put(c, charCountMap.get(c) - 1);
+        }
+
+        return true;
+    }
+}
+Output:
+false
+false

@@ -1,0 +1,122 @@
+
+
+ 1. Program to display current date and time in Java
+
+You can use the `LocalDateTime` class from the `java.time` package to display the current date and time:
+
+java
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println("Current Date and Time: " + currentDateTime);
+    }
+}
+ 2. Program to convert a date to a string in the format "MM/dd/yyyy"
+
+You can use the `DateTimeFormatter` class to format a date:
+
+```java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class DateToString {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();  // Current date
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String formattedDate = date.format(formatter);
+        System.out.println("Formatted Date: " + formattedDate);
+    }
+}
+ 3. What is the difference between collections and streams? Explain with an example
+
+Collection and Streams are both used to handle groups of data, but they have some key differences:
+
+Collections: Store data and are used for data manipulation, such as adding, removing, or searching for elements. Collections are mutable and can be modified.
+  
+Streams: Used for processing sequences of data (not storing). Streams support functional-style operations like filtering, mapping, and reducing. They are immutable and don’t store the data themselves.
+
+Ex:
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class CollectionVsStream {
+    public static void main(String[] args) {
+       
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        numbers.add(6); // Collections can be modified
+        System.out.println("Modified List: " + numbers);
+
+
+        List<Integer> evenNumbers = numbers.stream()
+                .filter(num -> num % 2 == 0) .collect(Collectors.toList());
+        System.out.println("Even Numbers using Stream: " + evenNumbers);
+    }
+}
+
+ 4. What are enums in Java? Explain with an example
+
+Enums** in Java are a special data type that enables a variable to hold a set of predefined constants. They are typically used when you have a fixed set of related constants, such as days of the week, directions, etc.
+
+Example:
+
+
+enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+}
+
+public class EnumExample {
+    public static void main(String[] args) {
+        Day today = Day.MONDAY;
+        System.out.println("Today is: " + today);
+
+        
+        switch (today) {
+            case MONDAY:
+                System.out.println("Start of the week!");
+                break;
+            case FRIDAY:
+                System.out.println("End of the week!");
+                break;
+            default:
+                System.out.println("Just another day.");
+        }
+    }
+}
+ 5. What are the in-built annotations in Java?
+
+Annotations in Java are used to provide metadata for the Java compiler. Some commonly used in-built annotations are:
+
+- `@Override`: Indicates that a method overrides a method in a superclass.
+- `@Deprecated`: Marks a method or class as outdated and suggests not to use it.
+- `@SuppressWarnings`: Suppresses compiler warnings for the annotated element.
+
+ Example:
+public class AnnotationExample {
+
+    @Deprecated
+    public void oldMethod() {
+        System.out.println("This method is deprecated");
+    }
+
+    @Override
+    public String toString() {
+        return "AnnotationExample class";
+    }
+
+    @SuppressWarnings("unchecked")
+    public void someMethod() {
+        // Suppressing warning for unchecked operations
+    }
+
+    public static void main(String[] args) {
+        AnnotationExample example = new AnnotationExample();
+        example.oldMethod();  // This method is marked as deprecated
+        System.out.println(example.toString());
+    }
+}
+
+
